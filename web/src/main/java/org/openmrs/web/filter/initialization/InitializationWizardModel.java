@@ -110,7 +110,7 @@ public class InitializationWizardModel {
 	/**
 	 * MySQL root account password used for simple installation. Filled in simplesetup.vm.
 	 */
-	public String databaseRootPassword = "";
+	public String databaseRootPassword = PasswordUtilClass.unscramblePassword(iwm_obj.getDBRootPassword());
 	
 	/**
 	 * Filled in on databasesetup.vm
@@ -120,7 +120,7 @@ public class InitializationWizardModel {
 	/**
 	 * Filled in on databasesetup.vm
 	 */
-	public String createDatabasePassword = "";
+	public String createDatabasePassword = PasswordUtilClass.createDBPassword();
 	
 	/**
 	 * DB user that can create an openmrs db user Filled in on databasetablesanduser.vm
@@ -130,7 +130,7 @@ public class InitializationWizardModel {
 	/**
 	 * DB user that can create an openmrs db user Filled in on databasetablesanduser.vm
 	 */
-	public String createUserPassword = "";
+	public String createUserPassword = PasswordUtilClass.createUserPassword();
 	
 	/**
 	 * The username of a user that exists that can read/write to openmrs. Entered on
